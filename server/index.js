@@ -17,6 +17,14 @@ const io = new Server(server, {
     }
 })
 
+io.on('connection', (socket) => {
+
+
+    io.on('disconnect', () => {
+        console.log('Disconnect')
+    })
+})
+
 server.listen(5000, () => {
     console.log('Server is running');
 });
