@@ -14,6 +14,12 @@ const Chat = () => {
         socket.emit('join', searchParams)
     }, [search]);
 
+    useEffect(() => {
+        socket.on('message', ({ data }) => {
+            console.log(data)
+        })
+    }, []);
+
     return (
         <div>
             Chat
